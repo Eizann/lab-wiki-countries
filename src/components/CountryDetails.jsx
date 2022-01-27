@@ -26,7 +26,7 @@ const CountryDetails = ({ countries }) => {
             </tr>
             <tr>
               <td>Area</td>
-              <td>{myCountry.area}</td>
+              <td>{myCountry.area}km²</td>
             </tr>
             <tr>
               <td>Borders</td>
