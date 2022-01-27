@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import Countries from './countries.json';
+import CountriesList from './components/CountriesList';
+import CountryDetails from './components/CountryDetails';
+import Navbar from './components/Navbar';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <div className="container">
+        <div className="row">
+          <div
+            className="col-5"
+            style={{ maxHeight: '90vh', overflow: 'scroll' }}
+          >
+            <div className="list-group">
+              <CountriesList countries={Countries} />
+            </div>
+          </div>
+
+          <Routes>
+            <Route
+              path="/:id"
+              element={<CountryDetails countries={Countries} />}
+            />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }

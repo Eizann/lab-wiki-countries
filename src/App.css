@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  width: 100vw;
+  height: 3em;
+  background-color: dodgerblue;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+Link {
+  text-decoration: none;
+}
